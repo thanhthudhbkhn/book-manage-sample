@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if user_signed_in? %>
+  I know your email is <%= current_user.email %> <br>
+  <%= link_to "Quit", destroy_user_session_path, method: :delete %>
+  <% else %>
+  <%= link_to "I am newer", new_user_registration_path %> <br>
+  <%= link_to "I have an account", new_user_session_path %>
+  <% end %>
+<hr>
 <%= yield %>
 
 </body>
