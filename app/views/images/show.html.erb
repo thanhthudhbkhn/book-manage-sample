@@ -37,8 +37,10 @@
 
 <h2>コメント一覧</h2>
 <ul>
-<% @image.image_comment.each do |image_comment|%>
-<li><%= image_comment.comment %>
-(<i><%= image_comment.user.name %></i>)</li>
-<% end %>
+  <% @image.image_comment.each do |image_comment|%>
+  <li>
+    <Strong><%= image_comment.user.name %></Strong> said:</br>
+    </t><%= image_comment.comment %>
+  </li>
+  <% end %>
 </ul>
